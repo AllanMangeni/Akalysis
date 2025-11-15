@@ -1,0 +1,123 @@
+# Akash Network Data Collection Configuration
+
+# Akash Network API Settings
+akash:
+  # Public RPC Nodes (REST API typically on port 1317)
+  rpc_nodes:
+    - https://rpc.akashnet.net:443
+    - https://rpc.akash.forbole.com:443
+    - https://akash-rpc.polkachu.com:443
+
+  # REST API Endpoints (typically port 1317)
+  rest_api:
+    - https://api.akashnet.net
+    - https://api-mainnet-akash-fullnode.forbole.com
+    - https://akash-api.polkachu.com
+
+  # API Endpoints paths
+  endpoints:
+    deployments: "/akash/deployment/v1beta3/deployments/list"
+    leases: "/akash/market/v1beta3/leases/list"
+    providers: "/akash/provider/v1beta3/providers"
+    market_orders: "/akash/market/v1beta3/orders/list"
+    market_bids: "/akash/market/v1beta3/bids/list"
+
+  # Request settings
+  timeout: 30  # seconds
+  max_retries: 3
+  retry_delay: 2  # seconds
+
+# Data Collection Settings
+collection:
+  # How often to collect data (in seconds)
+  interval: 300  # 5 minutes
+
+  # Batch size for paginated requests
+  page_size: 100
+
+  # Maximum pages to fetch per request (prevents infinite loops)
+  max_pages: 100
+
+  # Enable/disable specific collectors
+  enabled_collectors:
+    - deployment_costs
+    - resource_usage
+    - provider_stats
+    - market_activity
+
+# Data Storage Settings
+storage:
+  # Storage backend: json, csv, mongodb, postgresql
+  backend: json
+
+  # JSON/CSV storage settings
+  file:
+    base_path: "./collected_data"
+    retention_days: 90  # How long to keep raw data
+
+  # MongoDB settings (if using MongoDB)
+  mongodb:
+    connection_string: "mongodb://localhost:27017"
+    database: "akalysis"
+    collections:
+      deployments: "deployments"
+      leases: "leases"
+      providers: "providers"
+      costs: "deployment_costs"
+
+  # PostgreSQL settings (if using PostgreSQL)
+  postgresql:
+    host: "localhost"
+    port: 5432
+    database: "akalysis"
+    user: "akalysis_user"
+    password: ""  # Set in .env file
+
+# Data Processing Settings
+processing:
+  # Aggregation intervals
+  aggregation_windows:
+    - hourly
+    - daily
+    - weekly
+    - monthly
+
+  # Cost calculation settings
+  cost_calculation:
+    # AKT to USD conversion (will be updated from external API)
+    akt_usd_rate: 3.5
+    # External price API
+    price_api: "https://api.coingecko.com/api/v3/simple/price?ids=akash-network&vs_currencies=usd"
+
+  # Data cleaning
+  cleanup:
+    remove_duplicates: true
+    fill_missing_values: true
+    outlier_detection: true
+
+# Logging Settings
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./logs/data_collection.log"
+  rotation: "100 MB"  # Rotate logs at 100MB
+  retention: 10  # Keep 10 log files
+
+# Rate Limiting
+rate_limiting:
+  enabled: true
+  requests_per_second: 5
+  requests_per_minute: 100
+
+# Monitoring & Alerts
+monitoring:
+  # Enable health checks
+  health_check: true
+  health_check_interval: 60  # seconds
+
+  # Alert settings
+  alerts:
+    enabled: false
+    webhook_url: ""  # Set in .env file
+    alert_on_failures: true
+    failure_threshold: 5  # Alert after 5 consecutive failures
