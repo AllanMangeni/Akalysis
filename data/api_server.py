@@ -79,13 +79,18 @@ def index():
 @app.route('/api/health')
 def health():
     """Health check endpoint"""
+    # Safely check for data availability
+    costs_available = any(DATA_DIR.glob('deployment_costs_*.json'))
+    resources_available = any(DATA_DIR.glob('lease_resources_*.json'))
+    summary_available = (PROCESSED_DIR / 'dashboard_summary.json').exists()
+
     return jsonify({
         'status': 'healthy',
         'timestamp': datetime.now().isoformat(),
         'data_available': {
-            'costs': DATA_DIR.glob('deployment_costs_*.json').__next__() is not None,
-            'resources': DATA_DIR.glob('lease_resources_*.json').__next__() is not None,
-            'summary': (PROCESSED_DIR / 'dashboard_summary.json').exists()
+            'costs': costs_available,
+            'resources': resources_available,
+            'summary': summary_available
         }
     })
 

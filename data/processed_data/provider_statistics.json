@@ -1,0 +1,22 @@
+{
+  "akash1testprovider2abc": {
+    "provider_address": "akash1testprovider2abc",
+    "total_leases": 1,
+    "total_daily_usd": 119.95,
+    "total_monthly_usd": 3598.56,
+    "average_daily_usd": 119.95,
+    "unique_owners": 1,
+    "first_seen": "2025-11-16T14:00:00",
+    "last_seen": "2025-11-16T14:00:00"
+  },
+  "akash1testprovider1xyz": {
+    "provider_address": "akash1testprovider1xyz",
+    "total_leases": 2,
+    "total_daily_usd": 79.92,
+    "total_monthly_usd": 2397.56,
+    "average_daily_usd": 39.96,
+    "unique_owners": 2,
+    "first_seen": "2025-11-16T14:00:00",
+    "last_seen": "2025-11-16T14:00:00"
+  }
+}

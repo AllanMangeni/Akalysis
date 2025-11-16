@@ -14,13 +14,13 @@ akash:
     - https://api-mainnet-akash-fullnode.forbole.com
     - https://akash-api.polkachu.com
 
-  # API Endpoints paths
+  # API Endpoints paths (updated to v1beta4)
   endpoints:
-    deployments: "/akash/deployment/v1beta3/deployments/list"
-    leases: "/akash/market/v1beta3/leases/list"
-    providers: "/akash/provider/v1beta3/providers"
-    market_orders: "/akash/market/v1beta3/orders/list"
-    market_bids: "/akash/market/v1beta3/bids/list"
+    deployments: "/akash/deployment/v1beta4/deployments/list"
+    leases: "/akash/market/v1beta4/leases/list"
+    providers: "/akash/provider/v1beta4/providers"
+    market_orders: "/akash/market/v1beta4/orders/list"
+    market_bids: "/akash/market/v1beta4/bids/list"
 
   # Request settings
   timeout: 30  # seconds

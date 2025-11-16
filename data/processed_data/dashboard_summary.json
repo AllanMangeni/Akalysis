@@ -1,0 +1,15 @@
+{
+  "generated_at": "2025-11-16T13:59:58.632619",
+  "data_range": {
+    "start": "2025-11-16T14:00:00",
+    "end": "2025-11-16T14:00:00"
+  },
+  "summary": {
+    "total_active_leases": 3,
+    "total_daily_cost_usd": 199.87,
+    "total_monthly_cost_usd": 5996.119999999999,
+    "average_daily_cost_usd": 66.62333333333333,
+    "unique_owners": 3,
+    "unique_providers": 2
+  }
+}

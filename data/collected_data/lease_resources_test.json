@@ -1,0 +1,98 @@
+[
+  {
+    "timestamp": "2025-11-16T14:00:00.000000",
+    "lease_id": {
+      "owner": "akash1test1qqzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7lk",
+      "dseq": "1234567",
+      "gseq": "1",
+      "oseq": "1",
+      "provider": "akash1testprovider1xyz"
+    },
+    "resources": {
+      "cpu": {
+        "units": "2000",
+        "allocated": "2000"
+      },
+      "memory": {
+        "units": "4294967296",
+        "allocated": "4294967296"
+      },
+      "storage": {
+        "units": "10737418240",
+        "allocated": "10737418240"
+      },
+      "gpu": {
+        "units": "0",
+        "allocated": "0"
+      }
+    },
+    "provider_info": {
+      "address": "akash1testprovider1xyz",
+      "name": "Test Provider 1"
+    }
+  },
+  {
+    "timestamp": "2025-11-16T14:00:00.000000",
+    "lease_id": {
+      "owner": "akash1test2hhzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7ab",
+      "dseq": "2345678",
+      "gseq": "1",
+      "oseq": "1",
+      "provider": "akash1testprovider2abc"
+    },
+    "resources": {
+      "cpu": {
+        "units": "4000",
+        "allocated": "4000"
+      },
+      "memory": {
+        "units": "8589934592",
+        "allocated": "8589934592"
+      },
+      "storage": {
+        "units": "21474836480",
+        "allocated": "21474836480"
+      },
+      "gpu": {
+        "units": "1",
+        "allocated": "1"
+      }
+    },
+    "provider_info": {
+      "address": "akash1testprovider2abc",
+      "name": "Test Provider 2"
+    }
+  },
+  {
+    "timestamp": "2025-11-16T14:00:00.000000",
+    "lease_id": {
+      "owner": "akash1test3jjzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7cd",
+      "dseq": "3456789",
+      "gseq": "1",
+      "oseq": "1",
+      "provider": "akash1testprovider1xyz"
+    },
+    "resources": {
+      "cpu": {
+        "units": "1000",
+        "allocated": "1000"
+      },
+      "memory": {
+        "units": "2147483648",
+        "allocated": "2147483648"
+      },
+      "storage": {
+        "units": "5368709120",
+        "allocated": "5368709120"
+      },
+      "gpu": {
+        "units": "0",
+        "allocated": "0"
+      }
+    },
+    "provider_info": {
+      "address": "akash1testprovider1xyz",
+      "name": "Test Provider 1"
+    }
+  }
+]
