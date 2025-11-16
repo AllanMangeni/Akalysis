@@ -1,0 +1,25 @@
+{
+  "timestamp": "2025-11-16T14:25:05.473236",
+  "total_active_deployments": 10000,
+  "total_estimated_monthly_cost_usd": 654921.32,
+  "total_estimated_daily_cost_usd": 21816.36,
+  "average_deployment_cost_monthly_usd": 65.49,
+  "unique_owners": 6688,
+  "unique_providers": 0,
+  "resource_totals": {
+    "total_cpu_millicores": 26292490,
+    "total_cpu_cores": 26292.49,
+    "total_memory_bytes": 74020990314033,
+    "total_memory_gb": 68937.42,
+    "total_storage_bytes": 298740762945432,
+    "total_storage_gb": 278224.02,
+    "total_gpu_units": 6065
+  },
+  "cost_distribution": {
+    "deployments_under_10_usd": 3600,
+    "deployments_10_to_50_usd": 509,
+    "deployments_50_to_100_usd": 27,
+    "deployments_over_100_usd": 5864
+  },
+  "disclaimer": "All costs are estimates based on resource specifications and market pricing benchmarks. Actual costs may vary based on provider pricing and market conditions."
+}

@@ -97,38 +97,51 @@ def health():
 
 @app.route('/api/dashboard')
 def get_dashboard_data():
-    """Get complete dashboard data"""
+    """Get complete dashboard data - Now serving REAL Akash Network data!"""
     try:
-        # Load all data
-        costs = load_latest_file(DATA_DIR, 'deployment_costs') or []
-        resources = load_latest_file(DATA_DIR, 'lease_resources') or []
-        summary = load_processed_file('dashboard_summary.json') or {}
-        providers = load_processed_file('provider_statistics.json') or {}
+        # Load REAL deployment data from Akash Network
+        deployments = load_latest_file(DATA_DIR, 'real_deployments') or \
+                      load_latest_file(DATA_DIR, 'deployment_costs') or []
+        network_stats = load_latest_file(DATA_DIR, 'network_statistics') or {}
 
-        # Ensure costs and resources are lists
-        if isinstance(costs, dict):
-            costs = [costs]
-        if isinstance(resources, dict):
-            resources = [resources]
+        # Ensure deployments is a list
+        if isinstance(deployments, dict):
+            deployments = [deployments]
 
-        # Convert provider dict to list
-        provider_list = []
-        if isinstance(providers, dict):
-            provider_list = list(providers.values())
+        # Extract summary from network stats or calculate from deployments
+        if network_stats:
+            summary = {
+                'total_active_deployments': network_stats.get('total_active_deployments', 0),
+                'total_daily_cost_usd': network_stats.get('total_estimated_daily_cost_usd', 0),
+                'total_monthly_cost_usd': network_stats.get('total_estimated_monthly_cost_usd', 0),
+                'average_deployment_cost_monthly_usd': network_stats.get('average_deployment_cost_monthly_usd', 0),
+                'unique_owners': network_stats.get('unique_owners', 0),
+                'unique_providers': network_stats.get('unique_providers', 0),
+                'resource_totals': network_stats.get('resource_totals', {}),
+                'cost_distribution': network_stats.get('cost_distribution', {}),
+                'is_estimate': True,
+                'disclaimer': network_stats.get('disclaimer', '')
+            }
+        else:
+            summary = {
+                'total_active_deployments': len(deployments),
+                'total_daily_cost_usd': 0,
+                'total_monthly_cost_usd': 0,
+                'average_deployment_cost_monthly_usd': 0,
+                'unique_owners': 0,
+                'unique_providers': 0
+            }
+
+        # Sample deployments for the response (limit to prevent huge payloads)
+        sample_deployments = deployments[:100] if len(deployments) > 100 else deployments
 
         response = {
             'timestamp': datetime.now().isoformat(),
-            'summary': summary.get('summary', {
-                'total_active_leases': len(costs),
-                'total_daily_cost_usd': sum(c.get('pricing', {}).get('daily_cost_usd', 0) for c in costs),
-                'total_monthly_cost_usd': sum(c.get('pricing', {}).get('monthly_cost_usd', 0) for c in costs),
-                'average_daily_cost_usd': sum(c.get('pricing', {}).get('daily_cost_usd', 0) for c in costs) / len(costs) if costs else 0,
-                'unique_owners': len(set(c.get('deployment_id', {}).get('owner', '') for c in costs if c.get('deployment_id'))),
-                'unique_providers': len(set(c.get('lease_id', {}).get('provider', '') for c in costs if c.get('lease_id')))
-            }),
-            'costs': costs,
-            'resources': resources,
-            'providers': provider_list[:20]  # Limit to top 20 providers
+            'summary': summary,
+            'deployments': sample_deployments,
+            'total_deployments': len(deployments),
+            'showing': len(sample_deployments),
+            'data_source': 'real_akash_network' if network_stats else 'test_data'
         }
 
         return jsonify(response)
