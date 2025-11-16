@@ -1,0 +1,101 @@
+[
+  {
+    "timestamp": "2025-11-16T14:00:00.000000",
+    "deployment_id": {
+      "owner": "akash1test1qqzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7lk",
+      "dseq": "1234567"
+    },
+    "lease_id": {
+      "owner": "akash1test1qqzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7lk",
+      "dseq": "1234567",
+      "gseq": "1",
+      "oseq": "1",
+      "provider": "akash1testprovider1xyz"
+    },
+    "pricing": {
+      "amount_uakt": 500000,
+      "amount_akt": 0.5,
+      "usd_per_block": 0.00347,
+      "daily_cost_usd": 49.97,
+      "monthly_cost_usd": 1499.0,
+      "akt_usd_rate": 0,
+      "weekly_cost_usd": 349.78999999999996,
+      "yearly_cost_usd": 18239.05
+    },
+    "resources": {
+      "cpu": "2000",
+      "memory": "4294967296",
+      "storage": "10737418240",
+      "gpu": "0"
+    },
+    "timestamp_readable": "2025-11-16 14:00:00",
+    "date": "2025-11-16",
+    "hour": 14
+  },
+  {
+    "timestamp": "2025-11-16T14:00:00.000000",
+    "deployment_id": {
+      "owner": "akash1test2hhzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7ab",
+      "dseq": "2345678"
+    },
+    "lease_id": {
+      "owner": "akash1test2hhzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7ab",
+      "dseq": "2345678",
+      "gseq": "1",
+      "oseq": "1",
+      "provider": "akash1testprovider2abc"
+    },
+    "pricing": {
+      "amount_uakt": 1200000,
+      "amount_akt": 1.2,
+      "usd_per_block": 0.00833,
+      "daily_cost_usd": 119.95,
+      "monthly_cost_usd": 3598.56,
+      "akt_usd_rate": 0,
+      "weekly_cost_usd": 839.65,
+      "yearly_cost_usd": 43781.75
+    },
+    "resources": {
+      "cpu": "4000",
+      "memory": "8589934592",
+      "storage": "21474836480",
+      "gpu": "1"
+    },
+    "timestamp_readable": "2025-11-16 14:00:00",
+    "date": "2025-11-16",
+    "hour": 14
+  },
+  {
+    "timestamp": "2025-11-16T14:00:00.000000",
+    "deployment_id": {
+      "owner": "akash1test3jjzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7cd",
+      "dseq": "3456789"
+    },
+    "lease_id": {
+      "owner": "akash1test3jjzwc5d7hynl67nsmn9jukvwqp3vzdl6j2t7cd",
+      "dseq": "3456789",
+      "gseq": "1",
+      "oseq": "1",
+      "provider": "akash1testprovider1xyz"
+    },
+    "pricing": {
+      "amount_uakt": 300000,
+      "amount_akt": 0.3,
+      "usd_per_block": 0.00208,
+      "daily_cost_usd": 29.95,
+      "monthly_cost_usd": 898.56,
+      "akt_usd_rate": 0,
+      "weekly_cost_usd": 209.65,
+      "yearly_cost_usd": 10931.75
+    },
+    "resources": {
+      "cpu": "1000",
+      "memory": "2147483648",
+      "storage": "5368709120",
+      "gpu": "0"
+    },
+    "timestamp_readable": "2025-11-16 14:00:00",
+    "date": "2025-11-16",
+    "hour": 14
+  }
+]

@@ -183,6 +183,72 @@
   color: #667eea;
 }
 
+.loading-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* API Status Indicator */
+.api-status {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.api-status.connected {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.api-status.disconnected {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+/* Error Banner */
+.error-banner {
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE5A6F 100%);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error-icon {
+  font-size: 1.5rem;
+}
+
+.error-message {
+  flex: 1;
+  max-width: 800px;
+  font-size: 0.95rem;
+}
+
+.error-retry-button {
+  background: white;
+  color: #FF6B6B;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.error-retry-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 1024px) {
   .charts-section {
     grid-template-columns: 1fr;
@@ -206,6 +272,14 @@
   .header-right {
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .api-status {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
   }
 
   .dashboard-main {
@@ -214,5 +288,15 @@
 
   .chart-container {
     padding: 1rem;
+  }
+
+  .error-banner {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .error-message {
+    font-size: 0.9rem;
   }
 }

@@ -1,0 +1,27 @@
+2025-11-16 13:55:38 | INFO     | utils:setup_logging - Logging initialized
+2025-11-16 13:55:38 | INFO     | __main__:collect_leases - Collecting leases from Akash Network...
+2025-11-16 13:55:38 | DEBUG    | utils:request - Request to https://api.akashnet.net/akash/market/v1beta3/leases/list (attempt 1/3)
+2025-11-16 13:55:39 | ERROR    | utils:request - API request failed: 501 - {"code":12,"message":"Not Implemented","details":[]}
+2025-11-16 13:55:39 | INFO     | utils:paginated_request - Total items fetched: 0
+2025-11-16 13:55:39 | INFO     | __main__:collect_leases - Collected 0 leases
+2025-11-16 13:55:39 | INFO     | __main__:process_lease_costs - Processed 0 lease costs
+2025-11-16 13:55:39 | INFO     | utils:_save_json - Data saved to collected_data/deployment_costs_20251116_135539.json
+2025-11-16 13:55:39 | INFO     | utils:_save_json - Data saved to collected_data/cost_statistics_20251116_135539.json
+2025-11-16 13:59:58 | INFO     | utils:setup_logging - Logging initialized
+2025-11-16 13:59:58 | INFO     | __main__:load_latest_data - Loaded 3 records from 2 recent files
+2025-11-16 13:59:58 | INFO     | __main__:save_processed_data - Saved processed data to processed_data/processed_costs.json
+2025-11-16 13:59:58 | INFO     | __main__:save_processed_data - Saved processed data to processed_data/dashboard_summary.json
+2025-11-16 13:59:58 | INFO     | __main__:load_latest_data - Loaded 3 records from 1 recent files
+2025-11-16 13:59:58 | INFO     | __main__:save_processed_data - Saved processed data to processed_data/processed_resources.json
+2025-11-16 14:00:08 | INFO     | utils:setup_logging - Logging initialized
+2025-11-16 14:00:08 | INFO     | __main__:load_json_files - Loaded 3 records from 2 files
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/costs_hourly.json
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/costs_daily.json
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/costs_weekly.json
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/costs_monthly.json
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/provider_statistics.json
+2025-11-16 14:00:08 | INFO     | __main__:load_json_files - Loaded 3 records from 1 files
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/resources_hourly.json
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/resources_daily.json
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/resources_weekly.json
+2025-11-16 14:00:08 | INFO     | __main__:save_aggregated_data - Saved aggregated data to processed_data/resources_monthly.json
